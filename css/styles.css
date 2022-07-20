@@ -1,0 +1,271 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  line-height: 1.25;
+  margin: 0;
+  transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #000;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  gap: 24px;
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 1s cubic-bezier(0.19, 1, 0.22, 1);
+  user-select: none;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: hsl(210, 10%, 90%);
+    color: hsl(210, 10%, 20%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: hsl(210, 10%, 4%);
+    color: hsl(210, 10%, 80%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 auto;
+  max-width: min(1200px, 100%);
+  padding: 24px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin: 0;
+  }
+}
+
+.fillduck {
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.fillduck img {
+  height: 100%;
+}
+
+.product {
+  align-items: center;
+  border: 1px solid;
+  border-radius: 24px;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@media (max-width: 767px) {
+  .product {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .product {
+    background: hsl(210, 10%, 96%);
+    border-color: rgb(0 0 0 / 10%);
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 5%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .product {
+    background: hsl(210, 10%, 12%);
+    border-color: rgb(255 255 255 / 10%);
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 100%);
+  }
+}
+
+.product:hover {
+  transform: scale(1.01);
+}
+
+@media (prefers-color-scheme: light) {
+  .product:hover {
+    background: #fff;
+    box-shadow: 0 5px 20px 0 rgb(0 0 0 / 15%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .product:hover {
+    background: hsl(210, 10%, 14%);
+    box-shadow: 0 5px 20px 0 rgb(0 0 0 / 100%);
+  }
+}
+
+.product-availabilities {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.product-image {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  flex: 250px 0 0;
+  overflow: hidden;
+}
+
+.product-image img {
+  display: block;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .product-info {
+    text-align: center;
+  }
+}
+
+.product-details {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.availability-info {
+  align-items: center;
+  border-style: solid;
+  border-width: 0;
+  display: flex;
+  flex-basis: 25%;
+  flex-direction: column;
+  padding: 16px;
+  text-align: center;
+  transition: border-color 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@media (max-width: 767px) {
+  .availability-info {
+    flex-basis: 100%;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .availability-info {
+    flex-basis: 50%;
+  }
+}
+
+.availability-info + .availability-info {
+  border-left-width: 1px;
+}
+
+@media (max-width: 767px) {
+  .availability-info + .availability-info {
+    border-left: none;
+    border-top-width: 1px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .availability-info + .availability-info {
+    border-width: 0;
+  }
+  .availability-info:nth-child(even) {
+    border-left-width: 1px;
+  }
+  .availability-info + .availability-info + .availability-info {
+    border-top-width: 1px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .availability-info + .availability-info {
+    border-color: rgb(0 0 0 / 10%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .availability-info + .availability-info {
+    border-color: rgb(255 255 255 / 10%);
+  }
+}
+
+.restock {
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-count {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: light) {
+  .stock-count {
+    color: #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .stock-count {
+    color: #fff;
+  }
+}
+
+.restock {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+@media (prefers-color-scheme: light) {
+  .restock {
+    color: hsl(210, 10%, 40%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .restock {
+    color: hsl(210, 10%, 60%);
+  }
+}
